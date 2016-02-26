@@ -30,16 +30,16 @@ e,e,e,w,w,e,e,e
 sh.set_pixels(arrow)
 
 while True:
-    x_full, y_full, z_full = sh.get_accelerometer_raw().values()
+    # x_full, y_full, z_full = sh.get_accelerometer_raw().values()
     # Idea for fixing this with Python 3.x
-    # raw = sense.get_accelerometer_raw()
-    # print("x: {x}, y: {y}, z: {z}".format(**raw))
+    raw = sh.get_accelerometer_raw()
 
-    x=round(x_full, 0)
-    y=round(y_full, 0)
-    z=round(z_full, 0)
+    x=round(raw['x'], 0)
+    y=round(raw['y'], 0)
+    z=round(raw['z'], 0)
 
-    print ("x=%s, y=%s, z=%s" % (x_full,y_full,z_full))
+    #print ("x=%s, y=%s, z=%s" % (x_full,y_full,z_full))
+    print ("x=%s, y=%s, z=%s" % (raw['x'],raw['y'],raw['z']))
 
     if x == -1:  # works
         sh.set_pixels(arrow)
