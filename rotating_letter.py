@@ -31,6 +31,9 @@ sh.set_pixels(arrow)
 
 while True:
     x_full, y_full, z_full = sh.get_accelerometer_raw().values()
+    # Idea for fixing this with Python 3.x
+    # raw = sense.get_accelerometer_raw()
+    # print("x: {x}, y: {y}, z: {z}".format(**raw))
 
     x=round(x_full, 0)
     y=round(y_full, 0)
