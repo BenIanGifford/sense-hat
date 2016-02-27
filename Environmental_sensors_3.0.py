@@ -1,12 +1,13 @@
+#this must be run in python 2
 from sense_hat import SenseHat
 
 from time import sleep
 
-import math
-
 sense = SenseHat()
+# sense is just its name and can be changed
 
 sense.set_rotation(90)
+# 90 can be changed to 270, 180 or 0 depending on the way you have it oriented 
 
 sense.clear(0, 0, 0,)
 
@@ -16,5 +17,6 @@ while True:
     sleep(1)
     sense.show_message(" %s prh" % round((sense.get_humidity)()))
     sleep(1)
-    sense.show_message(" %s''" % round((sense.get_pressure() * 0.0295301), 2))
+    sense.show_message(" %s''" % round((sense.get_pressure() * 0.0295301), 2)) 
+    # , 2 can be changed to , x depending on how many decimals you want
     sleep(1)
