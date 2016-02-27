@@ -1,4 +1,3 @@
-#this must be run in python 2
 from sense_hat import SenseHat
 
 from time import sleep
