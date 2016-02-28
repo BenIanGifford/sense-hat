@@ -2,8 +2,6 @@ from sense_hat import SenseHat
 
 from time import sleep
 
-import math
-
 sense = SenseHat()
 
 sense.set_rotation(90)
