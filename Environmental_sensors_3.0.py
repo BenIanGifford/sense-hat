@@ -4,7 +4,7 @@ from time import sleep
 
 sense = SenseHat()
 
-sense.set_rotation(90)
+#sense.set_rotation(90)
 
 sense.clear(0, 0, 0,)
 
