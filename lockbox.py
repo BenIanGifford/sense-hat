@@ -51,10 +51,9 @@ def unlock():
 while True:
     if round(sh.get_humidity()) >= 50: 
         unlocked1 = True
-        print("TEST1")        
+     
     if unlocked1 == True and round(sh.get_temperature()) >= 26:
         unlocked2 = True
-        print("TEST2")
 
     if unlocked2 == True and round(int(sh.get_accelerometer()['roll'])) >= 57:
         unlocked3 = True
