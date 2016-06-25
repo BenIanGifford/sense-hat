@@ -7,6 +7,7 @@ from time import sleep
 unlocked1 = False
 unlocked2 = False
 unlocked3 = False
+unlocked4 = False
 
 sh = SenseHat()
 e = (0,0,0)
@@ -38,20 +39,29 @@ e,e,e,e,e,e,e,e
     
 sh.set_pixels(locked_screen)
 
+### unlock function ###
 
 def unlock():
+    
+    """unlocking function"""
+    
     sh.set_pixels(unlocked_screen)
     sleep(2)
     sh.show_message("You have unlocked it!!")
+
+### locks ###
 
 while True:
     if round(sh.get_humidity()) >= 50: 
         unlocked1 = True
      
-    if unlocked1 == True and round(sh.get_temperature()) >= 26:
+    if unlocked1 == True and round(int(sh.get_compass())):
         unlocked2 = True
 
-    if unlocked2 == True and round(int(sh.get_accelerometer()['roll'])) >= 57:
+    if unlocked2 == True and round(sh.get_temperature()) >= 26:
         unlocked3 = True
+
+    if unlocked3 == True and round(int(sh.get_accelerometer()['roll'])) >= 57:
+        unlocked4 = True
         unlock()
         quit()
