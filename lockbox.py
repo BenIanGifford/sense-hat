@@ -1,6 +1,6 @@
-disclamer = """You should not use this program to store any actully important data
-it is intended as an interesting program to demonstrate the cababilitys of the sense hat
-and should not be used in any other way"""
+disclamer = """You should not use this program to store any actully important
+data it is intended as an interesting program to demonstrate the cababilitys
+of the sense hat and should not be used in any other way"""
 
 ### imports ###
 from sense_hat import SenseHat
@@ -10,6 +10,7 @@ from time import sleep
 
 unlocked1 = False
 unlocked2 = False
+unlocked3 = False
 
 sh = SenseHat()
 e = (0,0,0)
@@ -45,12 +46,17 @@ sh.set_pixels(locked_screen)
 def unlock():
     sh.set_pixels(unlocked_screen)
     sleep(2)
-    sh.show_message("You have unlocked it!! This is a secret message")
+    sh.show_message("You have unlocked it!!")
 
 while True:
     if round(sh.get_humidity()) >= 50: 
         unlocked1 = True
+        print("TEST1")        
     if unlocked1 == True and round(sh.get_temperature()) >= 26:
         unlocked2 = True
+        print("TEST2")
+
+    if unlocked2 == True and round(int(sh.get_accelerometer()['roll'])) >= 57:
+        unlocked3 = True
         unlock()
         quit()
