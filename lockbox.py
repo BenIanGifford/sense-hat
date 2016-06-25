@@ -1,7 +1,3 @@
-disclamer = """You should not use this program to store any actully important
-data it is intended as an interesting program to demonstrate the cababilitys
-of the sense hat and should not be used in any other way"""
-
 ### imports ###
 from sense_hat import SenseHat
 from time import sleep
