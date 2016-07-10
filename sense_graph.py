@@ -25,7 +25,7 @@ try:
         sleep(10)
         now = datetime.datetime.now()
         times.append(now)
-        temp = sh.get_temperature()
+        temp = sh.get_temperature() * 1.8 + 32
         temps.append(temp)
 except KeyboardInterrupt:
     print("Ploting...")
